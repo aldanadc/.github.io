@@ -1,0 +1,148 @@
+header {
+    display: flex;
+    font-family: "IBM Plex Mono", sans-serif;
+    height: 44px;
+    align-items: center;
+    max-width: 100%;
+
+    #navbar {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        a {
+            margin-left: 5%;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        
+        #checkbox {
+            display: none;
+        }
+    
+        #hamburguesa {
+            font-size: 1rem;
+            width: 18px;
+            height: 24px;
+            margin-right: 5.9%;
+        }
+    
+        #cerrar {
+            display: none;
+            font-size: 1rem;
+            width: 18px;
+            height: 24px;
+            margin-right: 5.9%;
+        }
+    
+        ul {
+            display: none;
+            list-style: none;
+            position: absolute;
+            top: 45px;
+            left: 0;
+            height: 14rem;
+            width: 100%;
+            background-color: $background_blue;
+            transition: visibility 5s;
+        }
+    
+        ul li a {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            text-transform: uppercase;
+            margin-left: 5%;
+            color: #FFF;
+            transition: color 0.5s;
+        }
+        
+        ul li a:hover {
+            color: $buttons;
+            text-decoration: line-through;
+            cursor: pointer;
+        }
+
+        ul li a:active {
+            color: $dark-blue;
+            opacity: 56%;
+        }
+    }
+}
+
+
+input[type="checkbox"]:checked ~ #hamburguesa {
+    opacity: 0%;
+}
+
+input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar {
+    display: inline;
+}
+
+input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+@media screen and (min-width: 470px) and (max-width: 992px) {
+
+    header {
+        #navbar {
+            ul {
+                height: 190px;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 992px) {
+
+   /*Ver si puedo agregar que cuando está checked el label y se vuelve a pantalla pequeña, el menu se cierre*/
+
+    header {
+        height: 80px;
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 6.9% 0 6.9%;
+
+            #hamburguesa, #cerrar, #checkbox {
+                display: none;
+            }
+
+            input[type="checkbox"]:checked ~ #cerrar, input[type="checkbox"]:checked ~ #hamburguesa {
+                display: none;
+            }
+
+            ul, input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                position: relative;
+                top: 0;
+                height: 28px;
+                width: auto;
+                background-color: #FFF;
+                margin-left: 0;
+            }
+
+            ul li a {
+                color: $dark-blue;
+                margin: 0 3rem 0 0;
+            }
+
+            ul li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+

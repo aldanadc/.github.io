@@ -1,0 +1,41 @@
+#de_donde {
+    max-width: 100%;
+    margin-bottom: 54px;
+
+    .parrafo {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .parrafo:first-of-type {
+        margin-top: 8px;
+    }
+}  
+
+
+@media screen and (min-width: 992px) {
+    #de_donde {
+        //translate(50%, -473.6px);
+        //display: inline;
+        width: 32.2%;
+        position: absolute;
+        left: 50%;
+        top: 1535.99px;
+
+        .parrafo, .titulo {
+            margin: 0; 
+        }
+
+        .titulo {
+            margin-bottom: 1.5rem;
+            
+            div {
+                display: inline;
+            }
+        }
+
+    } 
+
+}

@@ -44,9 +44,8 @@ a {
     text-align: center;
     border: none;
     font-weight: 500;
-    transition: color 0.5s;
+    transition: color 0.4s linear;
     white-space: nowrap;
-
 }
 
 .button:hover {
@@ -66,7 +65,13 @@ a {
         line-height: 3.875rem;
         margin-left: 13.9%;
     }
+}
 
+@media screen and (min-width: 992px) {
 
+    .button {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
 }
 

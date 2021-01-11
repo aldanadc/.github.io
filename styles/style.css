@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *, html, body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -44,8 +43,8 @@ a {
   text-align: center;
   border: none;
   font-weight: 500;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
+  -webkit-transition: color 0.4s linear;
+  transition: color 0.4s linear;
   white-space: nowrap;
 }
 
@@ -64,6 +63,13 @@ a {
     font-size: 3rem;
     line-height: 3.875rem;
     margin-left: 13.9%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .button {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -104,30 +110,36 @@ header #navbar #checkbox {
 
 header #navbar #hamburguesa {
   font-size: 1rem;
-  width: 18px;
-  height: 24px;
+  line-height: 1.5rem;
   margin-right: 5.9%;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 header #navbar #cerrar {
-  display: none;
+  opacity: 0%;
+  position: absolute;
+  right: 5.9%;
   font-size: 1rem;
-  width: 18px;
-  height: 24px;
-  margin-right: 5.9%;
+  line-height: 24px;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 header #navbar ul {
-  display: none;
+  visibility: hidden;
+  /*display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;*/
+  opacity: 0%;
   list-style: none;
   position: absolute;
   top: 45px;
-  left: 0;
   height: 14rem;
   width: 100%;
   background-color: #0000EC;
-  -webkit-transition: visibility 5s;
-  transition: visibility 5s;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 header #navbar ul li a {
@@ -136,13 +148,14 @@ header #navbar ul li a {
   text-transform: uppercase;
   margin-left: 5%;
   color: #FFF;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 header #navbar ul li a:hover {
   color: #00F3BB;
-  text-decoration: line-through;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
   cursor: pointer;
 }
 
@@ -151,15 +164,18 @@ header #navbar ul li a:active {
   opacity: 56%;
 }
 
-input[type="checkbox"]:checked ~ #hamburguesa {
+header #navbar input[type="checkbox"]:checked ~ #hamburguesa {
   opacity: 0%;
 }
 
-input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar {
+header #navbar input[type="checkbox"]:checked ~ #cerrar {
   display: inline;
+  opacity: 100%;
 }
 
-input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
+header #navbar input[type="checkbox"]:checked ~ ul {
+  opacity: 100%;
+  visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,12 +190,11 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
 
 @media screen and (min-width: 470px) and (max-width: 992px) {
   header #navbar ul {
-    height: 190px;
+    height: 200px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  /*Ver si puedo agregar que cuando está checked el label y se vuelve a pantalla pequeña, el menu se cierre*/
   header {
     height: 80px;
   }
@@ -192,13 +207,20 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
             justify-content: space-between;
     margin: 0 6.9% 0 6.9%;
   }
+  header #navbar a {
+    margin-left: 0;
+  }
+  header #navbar a img {
+    width: 36px;
+    height: 36px;
+  }
   header #navbar #hamburguesa, header #navbar #cerrar, header #navbar #checkbox {
     display: none;
   }
   header #navbar input[type="checkbox"]:checked ~ #cerrar, header #navbar input[type="checkbox"]:checked ~ #hamburguesa {
     display: none;
   }
-  header #navbar ul, header #navbar input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
+  header #navbar ul, header #navbar input[type="checkbox"]:checked ~ ul {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -206,21 +228,20 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
     position: relative;
     top: 0;
     height: 28px;
     width: auto;
     background-color: #FFF;
     margin-left: 0;
+    opacity: 100%;
+    visibility: visible;
   }
   header #navbar ul li a {
     color: #060A24;
     margin: 0 3rem 0 0;
   }
-  header #navbar ul li:last-child {
+  header #navbar ul li:last-of-type a {
     margin-right: 0;
   }
 }
@@ -233,15 +254,14 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
   max-width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 29px;
 }
 
 #intro .titulo {
-  margin-top: 29px;
   color: #060A24;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -262,18 +282,18 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   display: none;
   font-size: 1rem;
   line-height: 1.5rem;
-  width: 50%;
+  max-width: 50%;
 }
 
 #intro .button {
   width: 90%;
   margin: 36px 0 24px 0;
-  padding: 13px 30%;
+  padding: 13px 0;
 }
 
-@media screen and (min-width: 933px) and (max-width: 992px) {
+@media screen and (min-width: 934px) and (max-width: 992px) {
   #intro .button {
-    margin-top: 55px;
+    margin-top: 57px;
   }
 }
 
@@ -284,13 +304,11 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
             align-items: flex-start;
     margin-left: 13.9%;
     margin-top: 120px;
-    width: auto;
   }
   #intro .titulo {
-    font-size: 64px;
-    line-height: 84px;
+    font-size: 4rem;
+    line-height: 5.25rem;
     margin-left: 0;
-    margin-top: 0;
   }
   #intro .titulo div {
     display: inline;
@@ -305,13 +323,15 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
     display: block;
   }
   #intro .button {
-    max-width: 226px;
-    height: 56px;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    text-align: center;
+    width: 15.7%;
     margin: 56px 0 5px 0;
-    padding: 16px 59px;
+    padding: 16px 0;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1440px) {
+  #intro .button {
+    width: 20%;
   }
 }
 
@@ -352,9 +372,6 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #episodios #contenido_episodios .titulo {
@@ -388,20 +405,12 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   margin-bottom: 0;
 }
 
-#episodios + img {
-  display: block;
-  width: 90%;
-  max-width: 430px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: -67.50px;
-  margin-bottom: -40.50px;
-}
-
 @media screen and (min-width: 600px) and (max-width: 992px) {
   #episodios #contenido_episodios .titulo {
     margin-top: 100px;
+  }
+  #episodios + img {
+    top: -27.50px;
   }
 }
 
@@ -442,17 +451,29 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   #episodios #contenido_episodios #contenedor_episodios iframe:nth-of-type(1), #episodios #contenido_episodios #contenedor_episodios iframe:nth-of-type(2) {
     margin-bottom: 72px;
   }
-  #episodios + img {
-    width: 31.8%;
-    height: 660px;
-    margin: 0 4.3% -104.6px 13.9%;
-    top: -168.6px;
+}
+
+@media screen and (min-width: 2300px) {
+  #episodios #contenido_episodios .titulo {
+    margin-top: 250px;
   }
 }
 
 #de_donde {
+  width: 100%;
   max-width: 100%;
   margin-bottom: 54px;
+}
+
+#de_donde img {
+  display: block;
+  width: 90%;
+  max-width: 457.6px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -67.50px;
+  margin-bottom: -40.50px;
 }
 
 #de_donde .parrafo {
@@ -468,19 +489,62 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
 
 @media screen and (min-width: 992px) {
   #de_donde {
-    width: 32.2%;
-    position: absolute;
-    left: 50%;
-    top: 1535.99px;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 17.8% -104.6px 13.9%;
+    top: -168.6px;
+    position: relative;
   }
-  #de_donde .parrafo, #de_donde .titulo {
+  #de_donde img {
+    top: 0;
     margin: 0;
   }
-  #de_donde .titulo {
+  #de_donde #contenedor_de_donde {
+    width: 464px;
+    position: relative;
+    top: 215px;
+    height: 100%;
+  }
+  #de_donde #contenedor_de_donde .parrafo, #de_donde #contenedor_de_donde .titulo {
+    margin: 0;
+  }
+  #de_donde #contenedor_de_donde .titulo {
     margin-bottom: 1.5rem;
   }
-  #de_donde .titulo div {
+  #de_donde #contenedor_de_donde .titulo div {
     display: inline;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  #de_donde img {
+    top: -27.50px;
+    margin-bottom: 0;
+  }
+}
+
+/*@media screen and (min-width: 1800px) {
+
+    #de_donde{
+        margin-bottom: -150.4px;
+    }
+}*/
+@media screen and (min-width: 2300px) {
+  #de_donde {
+    top: -104.6px;
+    margin-bottom: -40.6px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1439px) {
+  #de_donde {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
@@ -507,21 +571,10 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 450px;
-}
-
-@media screen and (min-width: 450px) and (max-width: 992px) {
-  #invitados .titulo {
-    margin-bottom: 25px;
-  }
-  #invitados #contenedor_imagenes img {
-    margin-bottom: 1rem;
-  }
 }
 
 @media screen and (min-width: 992px) {
   #invitados {
-    width: 100%;
     margin-bottom: 64px;
   }
   #invitados .titulo {
@@ -573,8 +626,6 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
 }
 
 #temas #contenedor_iconos .figure .icono {
-  height: 104px;
-  width: 104px;
   margin-bottom: 13px;
 }
 
@@ -583,7 +634,7 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   font-size: 1.5rem;
   color: #060A24;
   font-weight: 600;
-  line-height: 32px;
+  line-height: 2rem;
   width: 90%;
 }
 
@@ -600,12 +651,9 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  #temas #contenedor_iconos .figure {
-    width: 18.1%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 0 13.9% 0 13.9%;
   }
   #temas #contenedor_iconos .figure .icono {
     margin-bottom: 29px;
@@ -656,6 +704,12 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   margin-bottom: 67px;
 }
 
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  #novedades #contenedor_novedades .titulo {
+    margin: 84px 0 56px 5%;
+  }
+}
+
 @media screen and (min-width: 992px) {
   #novedades {
     height: 518px;
@@ -664,47 +718,21 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
     -webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
             clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
   }
-  #novedades #contenedor_novedades {
-    /*.button {
-                width: 24%;
-                max-width: 345px;
-                margin: 0 38% 151px 38%;
-                font-size: 1.125rem;
-                line-height: 1.5rem;
-                padding: 16px 59px;
-            }*/
-  }
   #novedades #contenedor_novedades .titulo {
-    width: 56%;
-    margin: 213px 22% 36px 22%;
+    margin: 213px auto 36px auto;
+    white-space: nowrap;
   }
   #novedades #contenedor_novedades .button {
-    width: 24%;
-    margin-left: 38%;
+    display: block;
+    width: 345px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.125rem;
     line-height: 1.5rem;
     padding: 16px 0;
   }
 }
 
-/*@media screen and (min-width: 992px) {
-
-    #novedades {
-
-        #contenedor_novedades {
-
-            .button {
-                width: 24%;
-                max-width: 345px;
-                margin-left: 38%;
-                
-            }
-
-        }
-
-    }
-
-}*/
 #footer .parrafo {
   margin: 24px 0 16px 0;
   text-align: center;
@@ -739,15 +767,16 @@ input[type="checkbox"]:checked ~ #hamburguesa ~ #cerrar ~ ul {
   #footer .parrafo, #footer #icons {
     margin: 36px 0 31px 0;
   }
+  #footer .parrafo {
+    margin-left: 6.9%;
+    font-size: 1rem;
+  }
   #footer #icons {
     margin-right: 6.9%;
     width: 16.5%;
   }
   #footer #icons .fab {
     font-size: 1.125rem;
-  }
-  #footer .parrafo {
-    margin-left: 6.9%;
   }
 }
 

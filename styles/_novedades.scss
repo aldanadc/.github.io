@@ -31,7 +31,20 @@
             margin-bottom: 67px;
         }
     }
-}   
+}  
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+
+    #novedades {
+
+        #contenedor_novedades {
+
+            .titulo {
+                margin: 84px 0 56px 5%;                
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 992px) {
 
@@ -45,46 +58,21 @@
         #contenedor_novedades {
 
             .titulo {
-                width: 56%;
-                margin: 213px 22% 36px 22%;
+                margin: 213px auto 36px auto;
+                white-space: nowrap;
             }
 
             .button {
-                width: 24%;
-                margin-left: 38%;
+                display: block;
+                width: 345px;
+                margin-left: auto;
+                margin-right: auto;
                 font-size: 1.125rem;
                 line-height: 1.5rem;
                 padding: 16px 0;
                 
             }
-
-            /*.button {
-                width: 24%;
-                max-width: 345px;
-                margin: 0 38% 151px 38%;
-                font-size: 1.125rem;
-                line-height: 1.5rem;
-                padding: 16px 59px;
-            }*/
         }
     }
 }
 
-/*@media screen and (min-width: 992px) {
-
-    #novedades {
-
-        #contenedor_novedades {
-
-            .button {
-                width: 24%;
-                max-width: 345px;
-                margin-left: 38%;
-                
-            }
-
-        }
-
-    }
-
-}*/

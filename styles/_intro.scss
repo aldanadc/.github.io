@@ -1,16 +1,18 @@
 #intro {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    //width: 100%;
     max-width: 100%;
     align-items: center;
+    margin-top: 29px;
+    //align-items: flex-start;
     
     .titulo {
-    margin-top: 29px;
-    color: $dark-blue;
-    align-self: flex-start;
+        //margin-top: 29px;
+        color: $dark-blue;
+        align-self: flex-start;
 
-        div:nth-of-type(1) span{
+        div:nth-of-type(1) span {
             text-decoration: line-through;
         }
     } 
@@ -26,41 +28,40 @@
         display: none;
         font-size: 1rem;
         line-height: 1.5rem;
-        width: 50%;
+        max-width: 50%;
     }
 
-        .button {
-            width: 90%;
-            margin: 36px 0 24px 0;
-            padding: 13px 30%;
-        }
+    .button {
+        width: 90%;
+        margin: 36px 0 24px 0;
+        padding: 13px 0;
+    }
     
 }
 
-@media screen and (min-width: 933px) and (max-width: 992px) {
+@media screen and (min-width: 934px) and (max-width: 992px) {
 
     #intro {
         .button {
-            margin-top: 55px;
+            margin-top: 57px;
         }
     }
 }
+
 
 @media screen and (min-width: 992px) {
 
     #intro {
-            
         align-items: flex-start;
         margin-left: 13.9%;
         margin-top: 120px;
-        width: auto;
-
+        //width: auto;
 
         .titulo {
-        font-size: 64px;
-        line-height: 84px;
+        font-size: 4rem;
+        line-height: 5.25rem;
         margin-left: 0;
-        margin-top: 0;
+        //margin-top: 0;
 
             div {
                 display: inline;
@@ -80,13 +81,20 @@
         }
         
         .button {
-            max-width: 226px;
-            height: 56px;
-            font-size: 1.125rem;
-            line-height: 1.5rem;
-            text-align: center;
+            width: 15.7%;
+            //max-width: 226px;
+            //height: 56px;
             margin: 56px 0 5px 0;
-            padding: 16px 59px;
+            padding: 16px 0;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1440px) {
+
+    #intro {
+        .button {
+            width: 20%;
         }
     }
 }

@@ -59,29 +59,46 @@ header {
             width: 100%;
             background-color: $background_blue;
             //transition: visibility 0.10s 0.15s linear;
-            transition: opacity 0.2s linear;
+            transition: all 0.15s linear;
+
+            li {
+                width: 100%;
+
+                a {
+                    font-size: 1rem;
+                    line-height: 1.75rem;
+                    text-transform: uppercase;
+                    margin-left: 5%;
+                    color: #FFF;
+                    transition: color 0.2s;
+                    width: 100%;
+                }
+
+                a:hover {
+                    color: $buttons;
+                    text-decoration-line: line-through;
+                    cursor: pointer;
+                }
+
+                a:active {
+                    color: $dark-blue;
+                    opacity: 56%;
+                }
+            }
         }
-    
-        ul li a {
-            font-size: 1rem;
-            line-height: 1.75rem;
-            text-transform: uppercase;
-            margin-left: 5%;
-            color: #FFF;
-            transition: color 0.2s;
-            //transition: text-decoration-line 3s 0.3s;
-        }
+
+        //VER DE PONER QUE EL LINK EN EL UL LI SEA WITDH 100% PARA QUE DONDE SEA QUE TOQUES FUNCIONE EL LINK
         
-        ul li a:hover {
+        /*ul li a:hover {
             color: $buttons;
             text-decoration-line: line-through;
             cursor: pointer;
-        }
+        }*/
 
-        ul li a:active {
+        /*ul li a:active {
             color: $dark-blue;
             opacity: 56%;
-        }
+        }*/
 
         input[type="checkbox"]:checked ~ #hamburguesa {
             opacity: 0%;
@@ -106,12 +123,23 @@ header {
 
 
 
-@media screen and (min-width: 470px) and (max-width: 992px) {
+@media screen and (min-width: 468px) and (max-width: 992px) {
 
     header {
         #navbar {
             ul {
                 height: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+
+    header {
+        #navbar {
+            ul {
+                height: 160px;
             }
         }
     }

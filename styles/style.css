@@ -58,11 +58,20 @@ a {
   text-decoration: line-through;
 }
 
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .titulo div {
+    display: inline;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .titulo {
     font-size: 3rem;
     line-height: 3.875rem;
     margin-left: 13.9%;
+  }
+  .titulo div {
+    display: inline;
   }
 }
 
@@ -93,6 +102,15 @@ header #navbar {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  /*ul li a:hover {
+            color: $buttons;
+            text-decoration-line: line-through;
+            cursor: pointer;
+        }*/
+  /*ul li a:active {
+            color: $dark-blue;
+            opacity: 56%;
+        }*/
 }
 
 header #navbar a {
@@ -138,8 +156,12 @@ header #navbar ul {
   height: 14rem;
   width: 100%;
   background-color: #0000EC;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+header #navbar ul li {
+  width: 100%;
 }
 
 header #navbar ul li a {
@@ -150,6 +172,7 @@ header #navbar ul li a {
   color: #FFF;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
+  width: 100%;
 }
 
 header #navbar ul li a:hover {
@@ -188,9 +211,15 @@ header #navbar input[type="checkbox"]:checked ~ ul {
           justify-content: space-evenly;
 }
 
-@media screen and (min-width: 470px) and (max-width: 992px) {
+@media screen and (min-width: 468px) and (max-width: 992px) {
   header #navbar ul {
     height: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  header #navbar ul {
+    height: 160px;
   }
 }
 
@@ -267,7 +296,11 @@ header #navbar input[type="checkbox"]:checked ~ ul {
       align-self: flex-start;
 }
 
-#intro .titulo div:nth-of-type(1) span {
+#intro .titulo .hello {
+  display: block;
+}
+
+#intro .titulo .tachado {
   text-decoration: line-through;
 }
 
@@ -297,6 +330,12 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   }
 }
 
+@media screen and (min-width: 600px) {
+  #intro .titulo .hello {
+    display: inline;
+  }
+}
+
 @media screen and (min-width: 992px) {
   #intro {
     -webkit-box-align: start;
@@ -310,10 +349,7 @@ header #navbar input[type="checkbox"]:checked ~ ul {
     line-height: 5.25rem;
     margin-left: 0;
   }
-  #intro .titulo div {
-    display: inline;
-  }
-  #intro .titulo div:nth-of-type(2) span {
+  #intro .titulo span:nth-of-type(2) {
     color: #0000EC;
   }
   #intro #parrafo_mobile {
@@ -399,6 +435,7 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   width: 93.1%;
   height: 232px;
   margin-bottom: 11px;
+  border: none;
 }
 
 #episodios #contenido_episodios #contenedor_episodios iframe:last-of-type {
@@ -463,17 +500,20 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   width: 100%;
   max-width: 100%;
   margin-bottom: 54px;
+  position: relative;
+  top: -67.50px;
+  margin-bottom: -13.50px;
 }
 
 #de_donde img {
   display: block;
   width: 90%;
   max-width: 457.6px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: -67.50px;
-  margin-bottom: -40.50px;
+  margin: 0 auto 27px auto;
+}
+
+#de_donde .titulo span {
+  display: block;
 }
 
 #de_donde .parrafo {
@@ -485,6 +525,16 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 
 #de_donde .parrafo:first-of-type {
   margin-top: 8px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  #de_donde {
+    top: -27.50px;
+    margin-bottom: 27.50px;
+  }
+  #de_donde .titulo span {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -516,15 +566,15 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   #de_donde #contenedor_de_donde .titulo {
     margin-bottom: 1.5rem;
   }
-  #de_donde #contenedor_de_donde .titulo div {
+  #de_donde #contenedor_de_donde .titulo span {
     display: inline;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
-  #de_donde img {
-    top: -27.50px;
-    margin-bottom: 0;
+@media screen and (min-width: 992px) and (max-width: 1439px) {
+  #de_donde {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
@@ -541,19 +591,16 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1439px) {
-  #de_donde {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-
 #invitados {
   margin-bottom: 48px;
 }
 
 #invitados .titulo {
   margin-bottom: 14px;
+}
+
+#invitados .titulo span {
+  display: block;
 }
 
 #invitados #contenedor_imagenes {
@@ -571,6 +618,12 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+  #invitados .titulo span {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -598,6 +651,10 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 
 #temas .titulo {
   margin-bottom: 37px;
+}
+
+#temas .titulo span {
+  display: block;
 }
 
 #temas #contenedor_iconos {
@@ -640,6 +697,12 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 
 #temas #contenedor_iconos .figure:last-child {
   margin-bottom: 42px;
+}
+
+@media screen and (min-width: 600px) {
+  #temas .titulo span {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 992px) {

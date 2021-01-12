@@ -3,6 +3,10 @@
 
     .titulo {
         margin-bottom: 14px;
+
+        span {
+            display: block;
+        }
     }
     
     #contenedor_imagenes {
@@ -14,6 +18,17 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    
+    #invitados {
+        .titulo {
+            span {
+                display: inline;
+            }
         }
     }
 }

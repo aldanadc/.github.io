@@ -2,16 +2,22 @@
     width: 100%;
     max-width: 100%;
     margin-bottom: 54px;
+    position: relative;
+    top: -67.50px;
+    margin-bottom: -13.50px;
 
     img {
         display: block;
         width: 90%;
         max-width: 457.6px;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        top: -67.50px;
-        margin-bottom: -40.50px;
+        margin: 0 auto 27px auto;
+        //position: relative;
+        //top: -67.50px;
+        
+    }
+
+    .titulo span {
+        display: block;
     }
 
     .parrafo {
@@ -23,6 +29,22 @@
 
     .parrafo:first-of-type {
         margin-top: 8px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+
+    #de_donde{
+
+        top: -27.50px;
+        margin-bottom: 27.50px;
+
+        .titulo {
+
+            span {
+                display: inline;
+            }
+        }
     }
 }
 
@@ -75,23 +97,23 @@
             .titulo {
                 margin-bottom: 1.5rem;
                 
-                div {
-                    display: inline;
+                span {
+                display: inline;
                 }
             }
         }
     } 
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
+
+@media screen and (min-width: 992px) and (max-width: 1439px) {
 
     #de_donde{
-        img {
-            top: -27.50px;
-            margin-bottom: 0;
-        }
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
+
 
 /*@media screen and (min-width: 1800px) {
 
@@ -100,18 +122,11 @@
     }
 }*/
 
+
 @media screen and (min-width: 2300px) {
 
     #de_donde{
         top: -104.6px;
         margin-bottom: -40.6px;
-    }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1439px) {
-
-    #de_donde{
-        margin-left: 10%;
-        margin-right: 10%;
     }
 }

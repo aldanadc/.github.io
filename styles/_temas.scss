@@ -3,6 +3,10 @@
 
     .titulo {
         margin-bottom: 37px;
+
+        span {
+            display: block;
+        }
     }
     
     #contenedor_iconos {
@@ -38,9 +42,21 @@
     }
 }
 
+@media screen and (min-width: 600px) {
+
+    #temas {
+        .titulo {
+            span {
+                display: inline;
+            }
+        }
+    }
+}
+
+
 @media screen and (min-width: 992px) {
 
-    #temas{
+    #temas {
 
         .titulo {
             margin-bottom: 69px;
@@ -70,11 +86,6 @@
             .figure:nth-of-type(2n+2){
                 margin-bottom: 34px;
             }
-
         }
-
-
-
     }
-
 }

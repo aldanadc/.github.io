@@ -58,12 +58,25 @@ a {
     text-decoration: line-through;
 }
 
+@media screen and (min-width: 600px) and (max-width: 992px) {
+
+    .titulo {
+        div {
+            display: inline;
+        }
+    }
+}
+
 @media screen and (min-width: 992px) {
 
     .titulo {
         font-size: 3rem;
         line-height: 3.875rem;
         margin-left: 13.9%;
+
+        div {
+            display: inline;
+        }
     }
 }
 

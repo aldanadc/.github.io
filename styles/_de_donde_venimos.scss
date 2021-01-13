@@ -10,10 +10,7 @@
         display: block;
         width: 90%;
         max-width: 457.6px;
-        margin: 0 auto 27px auto;
-        //position: relative;
-        //top: -67.50px;
-        
+        margin: 0 auto 27px auto;        
     }
 
     .titulo span {
@@ -32,7 +29,8 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
+
+@media screen and (min-width: 650px) and (max-width: 992px) {
 
     #de_donde{
 
@@ -57,36 +55,16 @@
         margin: 0 17.8% -104.6px 13.9%;
         top: -168.6px;
         position: relative;
-        //margin-bottom: -225px;
-        //margin-bottom: -230.4px;
-        //translate(50%, -473.6px);
-        //display: inline;
-        //width: 32.2%;
-        //position: absolute;
-        //left: 50%;
-        //top: 1535.99px;
 
         img {
-            //width: 31.8%;
-            //min-width: 457.6px;
-            //max-width: 500px;
-            //width: auto;
-            //display: absolute;
-            //height: 660px;
-            //margin: 0 0 -168.6px 13.9%;
-            //margin: -168.6 0 -168.6px 0;
-            //top: -168.6px; THIS!
             top: 0;
             margin: 0;
         }
 
         #contenedor_de_donde {
-            //margin-left: 4.3%;
             width: 464px;
-            //min-width: 450px;
             position: relative;
             top: 215px;
-            //top: 0;
             height: 100%;
 
             
@@ -113,14 +91,6 @@
         margin-right: 10%;
     }
 }
-
-
-/*@media screen and (min-width: 1800px) {
-
-    #de_donde{
-        margin-bottom: -150.4px;
-    }
-}*/
 
 
 @media screen and (min-width: 2300px) {

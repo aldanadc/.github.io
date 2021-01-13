@@ -19,25 +19,28 @@ a {
     text-decoration: none;
 }
 
+.titulo, .parrafo, .button, .fab, figcaption {
+    color: $dark-blue;
+}
+
+.titulo, figcaption {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.parrafo, .button {
+    font-family: "IBM Plex Mono", sans-serif;
+}
+
 .titulo {
     font-size: 2.25rem;
-    font-family: "IBM Plex Sans", sans-serif;
     font-weight: normal;
     line-height: 2.625rem;
     margin-left: 5%;
 }
 
-.parrafo {
-    color: $dark-blue;
-    font-family: "IBM Plex Mono", sans-serif;
-}
-
-
 .button {
     display: inline-block;
     background-color: $buttons;
-    color: $dark-blue;
-    font-family: "IBM Plex Mono", sans-serif;
     font-size: 1rem;
     line-height: 1.375rem;
     text-transform: uppercase;

@@ -19,24 +19,28 @@ a {
   text-decoration: none;
 }
 
+.titulo, .parrafo, .button, .fab, figcaption {
+  color: #060A24;
+}
+
+.titulo, figcaption {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.parrafo, .button {
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
 .titulo {
   font-size: 2.25rem;
-  font-family: "IBM Plex Sans", sans-serif;
   font-weight: normal;
   line-height: 2.625rem;
   margin-left: 5%;
 }
 
-.parrafo {
-  color: #060A24;
-  font-family: "IBM Plex Mono", sans-serif;
-}
-
 .button {
   display: inline-block;
   background-color: #00F3BB;
-  color: #060A24;
-  font-family: "IBM Plex Mono", sans-serif;
   font-size: 1rem;
   line-height: 1.375rem;
   text-transform: uppercase;
@@ -86,12 +90,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-family: "IBM Plex Mono", sans-serif;
   height: 44px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 100%;
 }
 
 header #navbar {
@@ -102,15 +104,6 @@ header #navbar {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  /*ul li a:hover {
-            color: $buttons;
-            text-decoration-line: line-through;
-            cursor: pointer;
-        }*/
-  /*ul li a:active {
-            color: $dark-blue;
-            opacity: 56%;
-        }*/
 }
 
 header #navbar a {
@@ -146,9 +139,6 @@ header #navbar #cerrar {
 
 header #navbar ul {
   visibility: hidden;
-  /*display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;*/
   opacity: 0%;
   list-style: none;
   position: absolute;
@@ -165,6 +155,7 @@ header #navbar ul li {
 }
 
 header #navbar ul li a {
+  font-family: "IBM Plex Mono", sans-serif;
   font-size: 1rem;
   line-height: 1.75rem;
   text-transform: uppercase;
@@ -172,7 +163,7 @@ header #navbar ul li a {
   color: #FFF;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
-  width: 100%;
+  display: block;
 }
 
 header #navbar ul li a:hover {
@@ -284,16 +275,10 @@ header #navbar input[type="checkbox"]:checked ~ ul {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-top: 29px;
-}
-
-#intro .titulo {
-  color: #060A24;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
 }
 
 #intro .titulo .hello {
@@ -308,26 +293,24 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   font-size: 0.875rem;
   line-height: 1.375rem;
   width: 90%;
-  margin-top: 16px;
+  max-width: 600px;
+  margin: 16px 0 0 5%;
 }
 
 #intro #parrafo_desktop {
   display: none;
   font-size: 1rem;
   line-height: 1.5rem;
-  max-width: 50%;
+  max-width: 75%;
 }
 
 #intro .button {
   width: 90%;
   margin: 36px 0 24px 0;
   padding: 13px 0;
-}
-
-@media screen and (min-width: 934px) and (max-width: 992px) {
-  #intro .button {
-    margin-top: 57px;
-  }
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -362,12 +345,20 @@ header #navbar input[type="checkbox"]:checked ~ ul {
     width: 15.7%;
     margin: 56px 0 5px 0;
     padding: 16px 0;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1440px) {
   #intro .button {
     width: 20%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #intro #parrafo_desktop {
+    max-width: 50%;
   }
 }
 
@@ -383,8 +374,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*width: 100%;
-    max-width: 100%;*/
   height: 1203.50px;
 }
 
@@ -442,12 +431,9 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
+@media screen and (min-width: 650px) and (max-width: 992px) {
   #episodios #contenido_episodios .titulo {
     margin-top: 100px;
-  }
-  #episodios + img {
-    top: -27.50px;
   }
 }
 
@@ -527,7 +513,7 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   margin-top: 8px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
+@media screen and (min-width: 650px) and (max-width: 992px) {
   #de_donde {
     top: -27.50px;
     margin-bottom: 27.50px;
@@ -578,12 +564,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   }
 }
 
-/*@media screen and (min-width: 1800px) {
-
-    #de_donde{
-        margin-bottom: -150.4px;
-    }
-}*/
 @media screen and (min-width: 2300px) {
   #de_donde {
     top: -104.6px;
@@ -616,13 +596,26 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 #invitados #contenedor_imagenes img {
   width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media screen and (min-width: 600px) {
   #invitados .titulo span {
     display: inline;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #invitados #contenedor_imagenes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #invitados #contenedor_imagenes img {
+    width: 50%;
+    margin: 0;
   }
 }
 
@@ -644,7 +637,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   #invitados #contenedor_imagenes img {
     width: calc(100%/3);
     max-width: calc(100%/3);
-    height: 364px;
     margin: 0;
   }
 }
@@ -687,12 +679,14 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 }
 
 #temas #contenedor_iconos .figure figcaption {
-  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.5rem;
-  color: #060A24;
   font-weight: 600;
   line-height: 2rem;
   width: 90%;
+}
+
+#temas #contenedor_iconos .figure:first-child {
+  margin-bottom: 49px;
 }
 
 #temas #contenedor_iconos .figure:last-child {
@@ -813,7 +807,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 }
 
 #footer #icons .fab {
-  color: #060A24;
   font-size: 1rem;
   line-height: 1.75rem;
 }

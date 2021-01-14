@@ -23,13 +23,13 @@ header {
     
         #hamburguesa {
             font-size: 1.3rem;
+            font-weight: bolder;
             margin-right: 5.9%;
             transition: opacity 0.3s linear;
         }
     
         #cerrar {
             opacity: 0%;
-            font-weight: 300;
             position: absolute;
             right: 5.9%;
             font-size: 1.3rem;

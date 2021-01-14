@@ -130,6 +130,7 @@ header #navbar #checkbox {
 
 header #navbar #hamburguesa {
   font-size: 1.3rem;
+  font-weight: bolder;
   margin-right: 5.9%;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;

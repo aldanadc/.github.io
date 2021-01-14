@@ -19,7 +19,7 @@ a {
     text-decoration: none;
 }
 
-.titulo, .parrafo, .button, .fab, figcaption {
+.titulo, .parrafo, .button, .fab, figcaption, #hamburguesa, #cerrar {
     color: $dark-blue;
 }
 
@@ -27,7 +27,7 @@ a {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
-.parrafo, .button {
+.parrafo, .button, #navbar ul li a {
     font-family: "IBM Plex Mono", sans-serif;
 }
 
@@ -36,6 +36,11 @@ a {
     font-weight: normal;
     line-height: 2.625rem;
     margin-left: 5%;
+}
+
+.parrafo {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
 }
 
 .button {
@@ -80,6 +85,11 @@ a {
         div {
             display: inline;
         }
+    }
+
+    .parrafo {
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 }
 

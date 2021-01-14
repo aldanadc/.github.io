@@ -19,7 +19,7 @@ a {
   text-decoration: none;
 }
 
-.titulo, .parrafo, .button, .fab, figcaption {
+.titulo, .parrafo, .button, .fab, figcaption, #hamburguesa, #cerrar {
   color: #060A24;
 }
 
@@ -27,7 +27,7 @@ a {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-.parrafo, .button {
+.parrafo, .button, #navbar ul li a {
   font-family: "IBM Plex Mono", sans-serif;
 }
 
@@ -36,6 +36,11 @@ a {
   font-weight: normal;
   line-height: 2.625rem;
   margin-left: 5%;
+}
+
+.parrafo {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .button {
@@ -76,6 +81,10 @@ a {
   }
   .titulo div {
     display: inline;
+  }
+  .parrafo {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -120,8 +129,7 @@ header #navbar #checkbox {
 }
 
 header #navbar #hamburguesa {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.3rem;
   margin-right: 5.9%;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
@@ -131,8 +139,7 @@ header #navbar #cerrar {
   opacity: 0%;
   position: absolute;
   right: 5.9%;
-  font-size: 1rem;
-  line-height: 24px;
+  font-size: 1.3rem;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
@@ -155,7 +162,6 @@ header #navbar ul li {
 }
 
 header #navbar ul li a {
-  font-family: "IBM Plex Mono", sans-serif;
   font-size: 1rem;
   line-height: 1.75rem;
   text-transform: uppercase;
@@ -290,8 +296,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 }
 
 #intro #parrafo_mobile {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
   width: 90%;
   max-width: 600px;
   margin: 16px 0 0 5%;
@@ -299,8 +303,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 
 #intro #parrafo_desktop {
   display: none;
-  font-size: 1rem;
-  line-height: 1.5rem;
   max-width: 75%;
 }
 
@@ -498,18 +500,16 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   margin: 0 auto 27px auto;
 }
 
-#de_donde .titulo span {
+#de_donde #contenedor_de_donde .titulo span {
   display: block;
 }
 
-#de_donde .parrafo {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+#de_donde #contenedor_de_donde .parrafo {
   margin-left: 5%;
   width: 90%;
 }
 
-#de_donde .parrafo:first-of-type {
+#de_donde #contenedor_de_donde .parrafo:first-of-type {
   margin-top: 8px;
 }
 
@@ -541,13 +541,17 @@ header #navbar input[type="checkbox"]:checked ~ ul {
     margin: 0;
   }
   #de_donde #contenedor_de_donde {
-    width: 464px;
+    max-width: 464px;
+    margin-left: 62.4px;
     position: relative;
     top: 215px;
     height: 100%;
   }
   #de_donde #contenedor_de_donde .parrafo, #de_donde #contenedor_de_donde .titulo {
     margin: 0;
+  }
+  #de_donde #contenedor_de_donde .parrafo {
+    width: auto;
   }
   #de_donde #contenedor_de_donde .titulo {
     margin-bottom: 1.5rem;
@@ -557,17 +561,20 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1439px) {
+@media screen and (min-width: 992px) and (max-width: 1349px) {
   #de_donde {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #de_donde #contenedor_de_donde {
+    margin-left: 0;
   }
 }
 
 @media screen and (min-width: 2300px) {
   #de_donde {
     top: -104.6px;
-    margin-bottom: -40.6px;
+    margin: 0 25.8% -40.6px 21.9%;
   }
 }
 
@@ -793,7 +800,6 @@ header #navbar input[type="checkbox"]:checked ~ ul {
 #footer .parrafo {
   margin: 24px 0 16px 0;
   text-align: center;
-  font-size: 0.875rem;
 }
 
 #footer #icons {
@@ -825,7 +831,7 @@ header #navbar input[type="checkbox"]:checked ~ ul {
   }
   #footer .parrafo {
     margin-left: 6.9%;
-    font-size: 1rem;
+    line-height: 1.75rem;
   }
   #footer #icons {
     margin-right: 6.9%;

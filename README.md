@@ -1,3 +1,3 @@
 # Podcast channel
 
-Proyecto final del sprint de aprendizaje 1 de la carrera de Desarrollo Web Full Stack en Acámica. Realizado enteramente con HTML y CSS. Réplica del sitio según ejemplo.
+Primer proyecto de la carrera de Desarrollo Web Full Stack en Acámica. Sitio web de un canal de podcasts realizado enteramente con HTML y CSS. Réplica del sitio según ejemplo.
